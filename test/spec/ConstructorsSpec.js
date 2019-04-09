@@ -60,26 +60,29 @@ describe('Car', function () {
 })
 // problem 4
 describe('Movie', function () {
+    var newMovie = new Movie('Gone with the Tornado', 'Comedy', 72)
     beforeEach(function() {
-        var m = new Movie('Gone with the Tornado', 'Comedy', 72)
     })
     it('should exist', function () {
         expect(Movie).toBeDefined();
     })
     it('should have a method', function () {
-        expect(m.changeRating).toEqual(jasmine.any(Function))
+        expect(newMovie.changeRating).toEqual(jasmine.any(Function))
     })
     it('method should be a prototype', function () {
-        expect(Object.getPrototypeOf(m).changeRating).toEqual(jasmine.any(Function));
+        expect(Object.getPrototypeOf(newMovie).changeRating).toEqual(jasmine.any(Function));
     })
     describe('changeRating method', function() {
         it('method should return a number', function () {
-            expect(m.changeRating(86)).toEqual(jasmine.any(Number));
-            expect(m.changeRating(86)).toEqual(79);
+            var newMovie = new Movie('Gone with the Tornado', 'Comedy', 72)
+            expect(newMovie.changeRating(86)).toEqual(jasmine.any(Number));
+            var newMovie = new Movie('Gone with the Tornado', 'Comedy', 72)
+            expect(newMovie.changeRating(86)).toEqual(79);
         })
         it('should change the original rating', function () {
-            m.changeRating(84)
-            expect(m.rating).toEqual(78)
+            var newMovie = new Movie('Gone with the Tornado', 'Comedy', 72)
+            newMovie.changeRating(84)
+            expect(newMovie.rating).toEqual(78)
         })
     })
 })
